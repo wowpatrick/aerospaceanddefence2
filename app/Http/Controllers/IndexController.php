@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $news = Data::all();
+        $news = Data::paginate('10');
 
         return view('news', [
             'news' => $news
